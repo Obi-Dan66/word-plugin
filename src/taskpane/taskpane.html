@@ -1,0 +1,68 @@
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT License. -->
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Word Smart Replace</title>
+
+    <script
+      type="text/javascript"
+      src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://res-1.cdn.office.net/files/fabric-cdn-prod_20230815.002/office-ui-fabric-core/11.1.0/css/fabric.min.css"
+    />
+
+    <link href="taskpane.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body class="ms-font-m ms-welcome ms-Fabric">
+    <section id="sideload-msg" class="ms-welcome__main">
+      <h2 class="ms-font-xl">
+        Please
+        <a
+          target="_blank"
+          href="https://learn.microsoft.com/office/dev/add-ins/testing/test-debug-office-add-ins#sideload-an-office-add-in-for-testing"
+          >sideload</a
+        >
+        your add-in to see app body.
+      </h2>
+    </section>
+    <main id="app-body" class="ms-welcome__main" style="display: none">
+      <h1 class="ms-font-xl app-title">Word Smart Replace</h1>
+
+      <button
+        type="button"
+        id="get-selection"
+        class="ms-welcome__action ms-Button ms-Button--hero ms-font-l"
+      >
+        <span class="ms-Button-label">Get Selection</span>
+      </button>
+
+      <p id="selected-text-display" class="ms-font-m selected-text-display">
+        (nothing selected yet)
+      </p>
+
+      <label class="ms-font-m" for="replacement-input">Replacement text</label>
+      <input
+        type="text"
+        id="replacement-input"
+        class="replacement-input"
+        placeholder="Enter replacement text"
+      />
+
+      <button
+        type="button"
+        id="replace-selection"
+        class="ms-welcome__action ms-Button ms-Button--hero ms-font-l"
+      >
+        <span class="ms-Button-label">Replace Selection</span>
+      </button>
+    </main>
+  </body>
+</html>
