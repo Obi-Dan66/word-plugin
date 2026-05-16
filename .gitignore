@@ -7,5 +7,6 @@ lib-amd/
 
 .env
 *.log
-
-.vscode/
+.vscode/*
+!.vscode/launch.json
+scripts/

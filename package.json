@@ -14,7 +14,7 @@
   "scripts": {
     "build": "webpack --mode production",
     "build:dev": "webpack --mode development",
-    "dev-server": "webpack serve --mode development",
+    "dev-server": "node scripts/check-dev-port.js && webpack serve --mode development",
     "lint": "office-addin-lint check",
     "lint:fix": "office-addin-lint fix",
     "prettier": "prettier --check \"src/**/*.{ts,html,css}\" \"*.{json,js,mjs}\"",

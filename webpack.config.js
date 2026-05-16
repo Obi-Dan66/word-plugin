@@ -15,7 +15,8 @@ async function getHttpsOptions() {
 module.exports = async (env, options) => {
   const dev = options.mode === "development";
   const config = {
-    devtool: "source-map",
+    devtool: dev ? "eval-source-map" : "source-map",
+    cache: dev ? { type: "filesystem" } : false,
     entry: {
       polyfill: ["core-js/stable", "regenerator-runtime/runtime"],
       taskpane: ["./src/taskpane/taskpane.ts", "./src/taskpane/taskpane.html"],
@@ -93,6 +94,15 @@ module.exports = async (env, options) => {
             : await getHttpsOptions(),
       },
       port: process.env.npm_package_config_dev_server_port || 3000,
+      hot: true,
+      liveReload: true,
+      watchFiles: ["src/**/*"],
+      client: {
+        overlay: {
+          errors: true,
+          warnings: false,
+        },
+      },
     },
   };
 
